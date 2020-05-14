@@ -1,7 +1,7 @@
 package api
 
 import (
-	appsv1beta1 "k8s.io/api/apps/v1beta1"
+	appsv1 "k8s.io/api/apps/v1"
 	autoscalingv1 "k8s.io/api/autoscaling/v1"
 	batchv1 "k8s.io/api/batch/v1"
 	batchv1beta1 "k8s.io/api/batch/v1beta1"
@@ -94,8 +94,8 @@ var KindToResourceMap = map[string]ResourceMap{
 	ResourceNameDaemonSet: {
 		GroupVersionResourceKind: GroupVersionResourceKind{
 			GroupVersionResource: schema.GroupVersionResource{
-				Group:    extensionsv1beta1.GroupName,
-				Version:  extensionsv1beta1.SchemeGroupVersion.Version,
+				Group:    appsv1.GroupName,
+				Version:  appsv1.SchemeGroupVersion.Version,
 				Resource: ResourceNameDaemonSet,
 			},
 			Kind: KindNameDaemonSet,
@@ -105,8 +105,8 @@ var KindToResourceMap = map[string]ResourceMap{
 	ResourceNameDeployment: {
 		GroupVersionResourceKind: GroupVersionResourceKind{
 			GroupVersionResource: schema.GroupVersionResource{
-				Group:    appsv1beta1.GroupName,
-				Version:  appsv1beta1.SchemeGroupVersion.Version,
+				Group:    appsv1.GroupName,
+				Version:  appsv1.SchemeGroupVersion.Version,
 				Resource: ResourceNameDeployment,
 			},
 			Kind: KindNameDeployment,
@@ -227,8 +227,8 @@ var KindToResourceMap = map[string]ResourceMap{
 	ResourceNameReplicaSet: {
 		GroupVersionResourceKind: GroupVersionResourceKind{
 			GroupVersionResource: schema.GroupVersionResource{
-				Group:    extensionsv1beta1.GroupName,
-				Version:  extensionsv1beta1.SchemeGroupVersion.Version,
+				Group:    appsv1.GroupName,
+				Version:  appsv1.SchemeGroupVersion.Version,
 				Resource: ResourceNameReplicaSet,
 			},
 			Kind: KindNameReplicaSet,
@@ -260,8 +260,8 @@ var KindToResourceMap = map[string]ResourceMap{
 	ResourceNameStatefulSet: {
 		GroupVersionResourceKind: GroupVersionResourceKind{
 			GroupVersionResource: schema.GroupVersionResource{
-				Group:    appsv1beta1.GroupName,
-				Version:  appsv1beta1.SchemeGroupVersion.Version,
+				Group:    appsv1.GroupName,
+				Version:  appsv1.SchemeGroupVersion.Version,
 				Resource: ResourceNameStatefulSet,
 			},
 			Kind: KindNameStatefulSet,

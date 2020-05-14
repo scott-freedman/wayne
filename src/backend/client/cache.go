@@ -3,7 +3,7 @@ package client
 import (
 	"k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes"
-	"k8s.io/client-go/listers/apps/v1beta1"
+ 	appsV1 "k8s.io/client-go/listers/apps/v1"
 	autoscalingv1 "k8s.io/client-go/listers/autoscaling/v1"
 	"k8s.io/client-go/listers/core/v1"
 
@@ -48,8 +48,8 @@ func (c *CacheFactory) EventLister() v1.EventLister {
 	return c.sharedInformerFactory.Core().V1().Events().Lister()
 }
 
-func (c *CacheFactory) DeploymentLister() v1beta1.DeploymentLister {
-	return c.sharedInformerFactory.Apps().V1beta1().Deployments().Lister()
+func (c *CacheFactory) DeploymentLister() appsV1.DeploymentLister {
+	return c.sharedInformerFactory.Apps().V1().Deployments().Lister()
 }
 
 func (c *CacheFactory) NodeLister() v1.NodeLister {
